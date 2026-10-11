@@ -1,0 +1,161 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * EcoSort design system — warm linen, botanical moss, earthy clay.
+ * All colors are oklch tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-linen: var(--linen);
+  --color-sage: var(--sage);
+  --color-eucalyptus: var(--eucalyptus);
+  --color-moss: var(--moss);
+  --color-clay: var(--clay);
+  --color-clay-soft: var(--clay-soft);
+  --color-slate-ocean: var(--slate-ocean);
+  --color-slate-soft: var(--slate-soft);
+  --color-persimmon: var(--persimmon);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-paper: 0 1px 2px oklch(0.3 0.03 80 / 0.04), 0 12px 32px -18px oklch(0.3 0.03 80 / 0.22);
+  --shadow-lift: 0 2px 4px oklch(0.3 0.03 80 / 0.05), 0 22px 48px -22px oklch(0.3 0.03 80 / 0.3);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.977 0.008 84.6); /* #FBF9F5 warm alabaster */
+  --foreground: oklch(0.29 0.024 152); /* deep moss ink */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.29 0.024 152);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.29 0.024 152);
+  --primary: oklch(0.36 0.045 158); /* #2D4A3E forest moss */
+  --primary-foreground: oklch(0.977 0.008 84.6);
+  --secondary: oklch(0.945 0.014 145); /* eucalyptus wash */
+  --secondary-foreground: oklch(0.36 0.045 158);
+  --muted: oklch(0.955 0.009 84.6);
+  --muted-foreground: oklch(0.52 0.018 130);
+  --accent: oklch(0.93 0.02 148);
+  --accent-foreground: oklch(0.36 0.045 158);
+  --destructive: oklch(0.605 0.145 40); /* soft persimmon */
+  --destructive-foreground: oklch(0.98 0.008 84.6);
+  --border: oklch(0.918 0.011 79); /* #EBE6DE */
+  --input: oklch(0.918 0.011 79);
+  --ring: oklch(0.68 0.028 138);
+
+  --linen: oklch(0.962 0.011 84.6);
+  --sage: oklch(0.665 0.028 138); /* #8A9A86 */
+  --eucalyptus: oklch(0.932 0.021 148); /* #E3ECE5 */
+  --moss: oklch(0.36 0.045 158);
+  --clay: oklch(0.575 0.086 32); /* #B36A5E */
+  --clay-soft: oklch(0.936 0.024 46);
+  --slate-ocean: oklch(0.51 0.045 236); /* #4A6B7C */
+  --slate-soft: oklch(0.935 0.017 232);
+  --persimmon: oklch(0.63 0.148 44); /* #D96B43 */
+
+  --chart-1: oklch(0.575 0.086 32);
+  --chart-2: oklch(0.51 0.045 236);
+  --chart-3: oklch(0.665 0.028 138);
+  --chart-4: oklch(0.63 0.148 44);
+  --chart-5: oklch(0.36 0.045 158);
+  --sidebar: oklch(0.962 0.011 84.6);
+  --sidebar-foreground: oklch(0.29 0.024 152);
+  --sidebar-primary: oklch(0.36 0.045 158);
+  --sidebar-primary-foreground: oklch(0.977 0.008 84.6);
+  --sidebar-accent: oklch(0.932 0.021 148);
+  --sidebar-accent-foreground: oklch(0.36 0.045 158);
+  --sidebar-border: oklch(0.918 0.011 79);
+  --sidebar-ring: oklch(0.68 0.028 138);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility card-paper {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-paper);
+  transition:
+    box-shadow 300ms ease-out,
+    transform 300ms ease-out;
+}
+
+@utility fill-transition {
+  transition:
+    height 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    width 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 300ms ease-out;
+}
